@@ -1,6 +1,19 @@
-- name: Clone kernel source
-  run: |
-    git clone --depth=1 https://github.com/romiyusnandar/Another_Kernel_tissot-4.9.git kernel
-    cd kernel
-    echo "Kernel source cloned successfully"
-    git log -1 --oneline
+name: Test Kernel Source
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clone kernel source
+        run: |
+          git clone --depth=1 https://github.com/romiyusnandar/Another_Kernel_tissot-4.9.git kernel
+          cd kernel
+          echo "Kernel source cloned successfully"
+          git log -1 --oneline
