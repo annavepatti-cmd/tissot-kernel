@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Test
+      - name: Test runner
         run: |
-          echo "GitHub Actions is working!"
-          echo "Repository checkout successful."
+          echo "TEST OK"
+          uname -a
