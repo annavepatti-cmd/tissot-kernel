@@ -1,12 +1,17 @@
-name: Build Tissot Kernel
+name: Test Build
 
 on:
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-22.04
+  test:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Test
+        run: |
+          echo "GitHub Actions is working!"
+          echo "Repository checkout successful."
